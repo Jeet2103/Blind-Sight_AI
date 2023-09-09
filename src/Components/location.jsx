@@ -11,7 +11,6 @@ const CurrentLocation = (props) => {
   }
 
   useEffect(() => {
-    // Check if the Geolocation API is available in the browser
       getLocation();
     if(location){
       sendData();
