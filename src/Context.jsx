@@ -19,15 +19,20 @@ export function MyProvider({ children }) {
           navigator.geolocation.getCurrentPosition(
             async (position) => {
               try {
+                // Get the user's latitude and longitude
                 const { latitude, longitude } = position.coords;
     
+                // Set the coordinates state
                 setCoordinates({ lat: latitude, long: longitude });
                 console.log(coordinates);
+                // Reverse geocode the location to get the place name
                 const response = await fetch(
                   `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
                 );
                 const data = await response.json();
                 const placeName = data.display_name;
+    
+                // Set the location state
                 setLocation(placeName);
                 apiBody.current={address:placeName,lat:latitude,long:longitude};
     
@@ -52,8 +57,10 @@ export function MyProvider({ children }) {
     
 
     const stopVidRecording = () => {
-        console.log("stop");
+        console.log("stop: ",stream);
+
         if (stream) {
+          console.log("context stop")
           stream.getTracks().forEach(track => track.stop());
           setStream(null);
           videoRef.current.srcObject = null;
