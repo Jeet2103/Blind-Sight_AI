@@ -3,11 +3,11 @@ import "./Home.css";
 import gif from "/gif/jarvis.gif";
 import logo from "/images/Logo.png";
 import { useMyContext } from "./Context";
-import Chat from "./Chat";
-import CameraRecorder from "./roadassist";
-import CurrentLocation from "./location";
-import FaceRecognition from "./facerecognition";
-import Currency from "./currency";
+import Chat from "./Components/Chat.jsx";
+import CameraRecorder from "./Components/roadassist";
+import CurrentLocation from "./Components/location";
+import FaceRecognition from "./Components/FaceRecognition";
+import Currency from "./Components/currency";
 
 const Home = () => {
   // const [text, setText] = useState("");

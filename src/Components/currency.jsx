@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import "./Home.css";
+import "../Home.css";
 import { useMyContext } from '../Context';
 
 const Currency = (props) => {
