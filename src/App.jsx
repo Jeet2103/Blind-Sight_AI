@@ -1,13 +1,14 @@
-import { useState } from 'react'
-
+import React from "react";
+import Home from "./Home";
+import { MyProvider } from "./Context";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h1>Hello World</h1>
+      <MyProvider>
+        <Home />
+      </MyProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
